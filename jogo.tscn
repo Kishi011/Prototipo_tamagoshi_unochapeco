@@ -1,0 +1,203 @@
+[gd_scene load_steps=27 format=3 uid="uid://gdltqm1l4t8n"]
+
+[ext_resource type="Texture2D" uid="uid://dvw6jnixcfykh" path="res://assets/fundo.png" id="1_wfmo7"]
+[ext_resource type="Script" path="res://botao_controller.gd" id="1_y1hsy"]
+[ext_resource type="Texture2D" uid="uid://dec301gcukag2" path="res://assets/spritesheet_idle_feliz.png" id="2_hiav6"]
+[ext_resource type="Texture2D" uid="uid://ccprmk2ckmpsa" path="res://assets/icone_comer.png" id="3_tdrm2"]
+[ext_resource type="Texture2D" uid="uid://wykam3j7otri" path="res://assets/spritesheet_idle_triste.png" id="4_8milj"]
+[ext_resource type="Texture2D" uid="uid://ct6eigh2qvhb6" path="res://assets/spritesheet_morto.png" id="4_ncq1n"]
+[ext_resource type="Texture2D" uid="uid://b4ucbqdvu7fvl" path="res://assets/icone_banho.png" id="4_nrx1t"]
+[ext_resource type="Texture2D" uid="uid://bvmbty403gp43" path="res://assets/icone_brincar.png" id="5_5lqle"]
+[ext_resource type="Texture2D" uid="uid://y8a4pojacy1f" path="res://assets/botao_normal.png" id="6_dqfmi"]
+[ext_resource type="Texture2D" uid="uid://b17qknp84r7n1" path="res://assets/botao_pressed.png" id="7_apvfu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmncx"]
+atlas = ExtResource("2_hiav6")
+region = Rect2(0, 0, 46, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgv8h"]
+atlas = ExtResource("2_hiav6")
+region = Rect2(46, 0, 46, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxsi1"]
+atlas = ExtResource("2_hiav6")
+region = Rect2(92, 0, 46, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_882ve"]
+atlas = ExtResource("2_hiav6")
+region = Rect2(138, 0, 46, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmnbk"]
+atlas = ExtResource("4_ncq1n")
+region = Rect2(0, 0, 46, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig6ei"]
+atlas = ExtResource("4_ncq1n")
+region = Rect2(46, 0, 46, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vamor"]
+atlas = ExtResource("4_ncq1n")
+region = Rect2(92, 0, 46, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83no6"]
+atlas = ExtResource("4_ncq1n")
+region = Rect2(138, 0, 46, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uttbq"]
+atlas = ExtResource("4_ncq1n")
+region = Rect2(184, 0, 46, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xs0m"]
+atlas = ExtResource("4_ncq1n")
+region = Rect2(230, 0, 46, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yka2m"]
+atlas = ExtResource("4_8milj")
+region = Rect2(0, 0, 46, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ometp"]
+atlas = ExtResource("4_8milj")
+region = Rect2(46, 0, 46, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4k1w"]
+atlas = ExtResource("4_8milj")
+region = Rect2(92, 0, 46, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4k4y"]
+atlas = ExtResource("4_8milj")
+region = Rect2(138, 0, 46, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnshh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmncx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgv8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxsi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_882ve")
+}],
+"loop": true,
+"name": &"idle_feliz",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmnbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ig6ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vamor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83no6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uttbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xs0m")
+}],
+"loop": true,
+"name": &"idle_morto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yka2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ometp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4k1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4k4y")
+}],
+"loop": true,
+"name": &"idle_triste",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k4ipm"]
+font_size = 10
+font_color = Color(0, 0.513726, 0, 1)
+shadow_size = 0
+
+[node name="jogo" type="Node2D"]
+
+[node name="BotaoController" type="Node" parent="."]
+script = ExtResource("1_y1hsy")
+
+[node name="FundoSprite" type="Sprite2D" parent="."]
+position = Vector2(39, 46)
+texture = ExtResource("1_wfmo7")
+
+[node name="MelequinhaSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 23)
+sprite_frames = SubResource("SpriteFrames_nnshh")
+animation = &"idle_morto"
+autoplay = "idle_feliz"
+frame_progress = 0.777556
+centered = false
+
+[node name="IconeComida" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(20, 55)
+texture = ExtResource("3_tdrm2")
+centered = false
+
+[node name="IconeBanho" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(35, 55)
+texture = ExtResource("4_nrx1t")
+centered = false
+
+[node name="IconeBrincar" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(50, 55)
+texture = ExtResource("5_5lqle")
+centered = false
+
+[node name="BotaoA" type="TextureButton" parent="."]
+offset_left = 17.0
+offset_top = 67.0
+offset_right = 28.0
+offset_bottom = 79.0
+texture_normal = ExtResource("6_dqfmi")
+texture_pressed = ExtResource("7_apvfu")
+
+[node name="BotaoB" type="TextureButton" parent="."]
+offset_left = 34.0
+offset_top = 71.0
+offset_right = 45.0
+offset_bottom = 83.0
+texture_normal = ExtResource("6_dqfmi")
+texture_pressed = ExtResource("7_apvfu")
+
+[node name="BotaoC" type="TextureButton" parent="."]
+offset_left = 50.0
+offset_top = 68.0
+offset_right = 61.0
+offset_bottom = 80.0
+texture_normal = ExtResource("6_dqfmi")
+texture_pressed = ExtResource("7_apvfu")
+
+[node name="BarraComidaLable" type="Label" parent="."]
+offset_left = 18.0
+offset_top = 24.0
+offset_right = 32.0
+offset_bottom = 39.0
+text = "100"
+label_settings = SubResource("LabelSettings_k4ipm")
+
+[connection signal="pressed" from="BotaoA" to="BotaoController" method="troca_acao"]
+[connection signal="pressed" from="BotaoB" to="BotaoController" method="executa_acao"]
