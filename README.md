@@ -1,1 +1,3 @@
-# Prototipo_tamagoshi_unochapeco
+# Prototipo tamagoshi
+
+
